@@ -1,0 +1,56 @@
+@mixin days {
+  .calendar-tue {
+    div:nth-child(1) {
+      margin-left: $calendarDayMargin;
+    }
+  }
+  .calendar-wed {
+    div:nth-child(1) {
+      margin-left: $calendarDayMargin * 2;
+    }
+  }
+  .calendar-thu {
+    div:nth-child(1) {
+      margin-left: $calendarDayMargin * 3;
+    }
+  }
+  .calendar-fri {
+    div:nth-child(1) {
+      margin-left: $calendarDayMargin * 4;
+    }
+  }
+  .calendar-sat {
+    div:nth-child(1) {
+      margin-left: $calendarDayMargin * 5;
+    }
+  }
+  .calendar-sun {
+    div:nth-child(1) {
+      margin-left: $calendarDayMargin * 6;
+    }
+  }
+}
+
+@mixin calc($a) {
+  div:nth-child(#{$a}) {
+    display: flex;
+    position: relative;
+    background-color: $blockBGColor;
+    border: 1px solid $blockBorderColor;
+    height: $rectangleSize;
+    width: $rectangleSize;
+    bottom: 0;
+    &::before {
+      content: "#{$a}";
+      display: block;
+      margin: auto;
+      color: $numberColor;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: $hoverBlockBGcolor;
+      bottom: 20px;
+      transition: ease 0.5s;
+    }
+  }
+}

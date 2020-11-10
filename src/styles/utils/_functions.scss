@@ -1,0 +1,25 @@
+.calendar-28 {
+  @for $i from 1 through 28 {
+    @include calc($i);
+  }
+}
+
+.calendar-29 {
+  @for $i from 1 through 29 {
+    @include calc($i);
+  }
+}
+
+.calendar-30 {
+  @for $i from 1 through 30 {
+    @include calc($i);
+  }
+}
+
+.calendar-31 {
+  @for $i from 1 through 31 {
+    @include calc($i);
+  }
+}
+
+@include days();
