@@ -39,7 +39,7 @@
     border: 1px solid $blockBorderColor;
     height: $rectangleSize;
     width: $rectangleSize;
-    bottom: 0;
+    transition: transform 0.5s, background-color 0.5s;
     &::before {
       content: "#{$a}";
       display: block;
@@ -49,8 +49,7 @@
     &:hover {
       cursor: pointer;
       background-color: $hoverBlockBGcolor;
-      bottom: 20px;
-      transition: ease 0.5s;
+      transform: translate(0, -20px);
     }
   }
 }
