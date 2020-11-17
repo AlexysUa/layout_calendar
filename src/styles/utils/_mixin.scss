@@ -1,32 +1,7 @@
 @mixin days {
-  .calendar-tue {
-    div:nth-child(1) {
-      margin-left: $calendarDayMargin;
-    }
-  }
-  .calendar-wed {
-    div:nth-child(1) {
-      margin-left: $calendarDayMargin * 2;
-    }
-  }
-  .calendar-thu {
-    div:nth-child(1) {
-      margin-left: $calendarDayMargin * 3;
-    }
-  }
-  .calendar-fri {
-    div:nth-child(1) {
-      margin-left: $calendarDayMargin * 4;
-    }
-  }
-  .calendar-sat {
-    div:nth-child(1) {
-      margin-left: $calendarDayMargin * 5;
-    }
-  }
-  .calendar-sun {
-    div:nth-child(1) {
-      margin-left: $calendarDayMargin * 6;
+  @each $day, $count in (tue: 1, wed: 2, thu: 3, fri: 4, sat: 5, sun: 6) {
+    .calendar-#{$day} div:first-child {
+      margin-left: $calendarDayMargin * $count;
     }
   }
 }
